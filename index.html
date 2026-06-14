@@ -78,7 +78,8 @@
         border: 1px solid #333;
         color: #e6edf3;
         transition: 0.2s;
-        margin-left: 35px;
+        margin-left: 20px;
+        vertical-align: middle;
     }
     body.light #toggle {
         background: #ddd;
@@ -169,7 +170,7 @@
     .timeline {
         border-left: 3px solid #58a6ff;
         padding-left: 40px;
-        margin-left: 100px; /* SHIFT LINE RIGHT */
+        margin-left: 100px;
         margin-top: 20px;
         position: relative;
     }
@@ -177,9 +178,10 @@
     .timeline-item {
         margin-bottom: 50px;
         position: relative;
-        padding-left: 100px;
+        padding-left: 40px;
     }
 
+    /* FIXED DOT ALIGNMENT + GLOW EFFECT */
     .timeline-item::before {
         content: "";
         width: 14px;
@@ -187,14 +189,21 @@
         background: #58a6ff;
         border-radius: 50%;
         position: absolute;
-        left: -46px;
+        left: -43px; /* aligns dot perfectly on the line */
         top: 5px;
+        transition: 0.2s ease;
+        box-shadow: 0 0 0px #58a6ff;
     }
 
-    /* Dates on left side with spacing preserved */
+    .timeline-item:hover::before {
+        transform: scale(1.35);
+        box-shadow: 0 0 12px #58a6ff;
+    }
+
+    /* Dates on left side */
     .internship-date {
         position: absolute;
-        left: -230px;
+        left: -180px;
         top: 0;
         width: 150px;
         text-align: right;
