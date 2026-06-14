@@ -47,19 +47,32 @@
         position: fixed;
         top: 0;
         width: 100%;
-        padding: 20px 10%;
+        padding: 20px 6%;
         background: rgba(13, 17, 23, 0.8);
         backdrop-filter: blur(10px);
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         z-index: 999;
         border-bottom: 1px solid #1f2937;
     }
 
+    nav .logo {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    nav .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: center;
+    }
+
     nav a {
         color: inherit;
-        margin-left: 20px;
         text-decoration: none;
         font-weight: 500;
         transition: 0.2s;
@@ -78,7 +91,6 @@
         border: 1px solid #333;
         color: #e6edf3;
         transition: 0.2s;
-        margin-left: 35px;
     }
     body.light #toggle {
         background: #ddd;
@@ -113,12 +125,12 @@
     }
 
     h1 {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
         margin-bottom: 20px;
     }
 
     h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-bottom: 20px;
         color: #58a6ff;
     }
@@ -169,7 +181,7 @@
     .timeline {
         border-left: 3px solid #58a6ff;
         padding-left: 40px;
-        margin-left: 140px; /* SHIFT LINE RIGHT */
+        margin-left: 140px;
         margin-top: 20px;
         position: relative;
     }
@@ -191,7 +203,6 @@
         top: 5px;
     }
 
-    /* Dates on left side with spacing preserved */
     .internship-date {
         position: absolute;
         left: -170px;
@@ -202,7 +213,6 @@
         color: #9aa0a6;
     }
 
-    /* Company logos same height */
     .company-logo {
         height: 60px;
         width: auto;
@@ -250,6 +260,77 @@
         color: #8b949e;
         font-size: 0.9rem;
     }
+
+    /* ---------------------- */
+    /* RESPONSIVE DESIGN HERE */
+    /* ---------------------- */
+
+    @media (max-width: 900px) {
+        nav {
+            padding: 15px 5%;
+        }
+        .timeline {
+            margin-left: 60px;
+        }
+        .internship-date {
+            left: -120px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        #floating-shape {
+            display: none;
+        }
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        nav .links {
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        section {
+            padding: 100px 7%;
+        }
+        h1 {
+            font-size: 2.6rem;
+        }
+        h2 {
+            font-size: 1.7rem;
+        }
+        .timeline {
+            border-left: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .timeline-item {
+            padding-left: 0;
+        }
+        .timeline-item::before {
+            display: none;
+        }
+        .internship-date {
+            position: relative;
+            left: 0;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        nav .logo {
+            font-size: 1.1rem;
+        }
+        nav .links {
+            gap: 10px;
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
 </style>
 </head>
 
@@ -257,8 +338,9 @@
 
 <!-- NAV -->
 <nav>
-    <div style="font-size: 1.3rem; font-weight: 700;">Tabitha Gottipati Portfolio</div>
-    <div>
+    <div class="logo">Tabitha Gottipati Portfolio</div>
+
+    <div class="links">
         <a href="#home">Home</a>
         <a href="#research">Research</a>
         <a href="#achievements">Achievements</a>
