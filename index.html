@@ -308,6 +308,11 @@
         }
         .timeline-item::before {
             display: none;
+            /* TIMELINE DOT HOVER EFFECT */
+            .timeline-item:hover::before {
+            transform: scale(1.4);
+            box-shadow: 0 0 12px #58a6ff, 0 0 20px #58a6ff;
+            }
         }
         .internship-date {
             position: relative;
