@@ -1,477 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tabitha Gottipati Portfolio</title>
+<title>Tabitha Gottipati</title>
 
 <style>
-    /* RESET + GLOBAL */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-        font-family: "Segoe UI", sans-serif;
-    }
-
-    body {
-        background: #0d1117;
-        color: #e6edf3;
-        overflow-x: hidden;
-        transition: background 0.3s, color 0.3s;
-    }
-
-    /* LIGHT MODE */
-    body.light {
-        background: #f5f5f5;
-        color: #111;
-    }
-    body.light nav {
-        background: rgba(255,255,255,0.8);
-        border-bottom: 1px solid #ccc;
-    }
-    body.light .card, 
-    body.light .contact-box,
-    body.light .project {
-        background: #fff;
-        border: 1px solid #ddd;
-        color: #111;
-    }
-    body.light h2 {
-        color: #0066cc;
-    }
-
-    /* NAVIGATION */
-    nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        padding: 20px 6%;
-        background: rgba(13, 17, 23, 0.8);
-        backdrop-filter: blur(10px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        z-index: 999;
-        border-bottom: 1px solid #1f2937;
-    }
-
-    nav .logo {
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-
-    nav .links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        align-items: center;
-    }
-
-    nav a {
-        color: inherit;
-        text-decoration: none;
-        font-weight: 500;
-        transition: 0.2s;
-    }
-
-    nav a:hover {
-        color: #58a6ff;
-    }
-
-    /* LIGHT/DARK TOGGLE */
-    #toggle {
-        cursor: pointer;
-        padding: 8px 14px;
-        border-radius: 8px;
-        background: #161b22;
-        border: 1px solid #333;
-        color: #e6edf3;
-        transition: 0.2s;
-    }
-    body.light #toggle {
-        background: #ddd;
-        color: #111;
-        border: 1px solid #aaa;
-    }
-
-    /* FLOATING SHAPE */
-    #floating-shape {
-        position: fixed;
-        top: 20%;
-        right: 5%;
-        width: 120px;
-        height: 120px;
-        background: linear-gradient(135deg, #00aaff, #0066ff);
-        border-radius: 20px;
-        filter: drop-shadow(0 0 20px #0088ff);
-        transform-style: preserve-3d;
-        transition: transform 0.1s linear;
-        z-index: 1000;
-    }
-
-    /* SECTIONS */
-    section {
-        padding: 120px 10%;
-        border-bottom: 1px solid #1f2937;
-    }
-
-    h1, h2 {
-        font-weight: 700;
-        letter-spacing: 1px;
-    }
-
-    h1 {
-        font-size: 3.2rem;
-        margin-bottom: 20px;
-    }
-
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: #58a6ff;
-    }
-
-    p {
-        font-size: 1.1rem;
-        line-height: 1.7rem;
-        max-width: 800px;
-        margin-bottom: 20px;
-    }
-
-    /* CARDS */
-    .card {
-        background: #161b22;
-        padding: 30px;
-        border-radius: 12px;
-        margin-top: 20px;
-        border: 1px solid #1f2937;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
-    }
-
-    /* PROJECT GALLERY */
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-    }
-
-    .project {
-        background: #161b22;
-        padding: 20px;
-        border-radius: 12px;
-        border: 1px solid #1f2937;
-        transition: 0.3s;
-    }
-
-    .project:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
-    }
-
-    /* INTERNSHIP TIMELINE */
-    .timeline {
-        border-left: 3px solid #58a6ff;
-        padding-left: 40px;
-        margin-left: 160px;
-        margin-top: 20px;
-        position: relative;
-    }
-
-    .timeline-item {
-        margin-bottom: 50px;
-        position: relative;
-        padding-left: 120px;
-    }
-
-    .timeline-item::before {
-        content: "";
-        width: 14px;
-        height: 14px;
-        background: #58a6ff;
-        border-radius: 50%;
-        position: absolute;
-        left: -50px;
-        top: 5px;
-    }
-    /* TIMELINE DOT HOVER EFFECT */
-.timeline-item:hover::before {
-    transform: scale(1.4);
-    box-shadow: 0 0 12px #58a6ff, 0 0 20px #58a6ff;
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    scroll-behavior: smooth;
 }
 
+body {
+    background: #0d1117;
+    color: #e6edf3;
+    overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
+}
 
-    .internship-date {
-        position: absolute;
-        left: -230px;
-        top: 0;
-        width: 150px;
-        text-align: right;
-        font-size: 0.95rem;
-        color: #9aa0a6;
+/* LIGHT MODE */
+body.light {
+    background: #f5f5f5;
+    color: #111;
+}
+
+body.light nav {
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #ccc;
+}
+
+body.light .hero h1 {
+    color: #0066cc;
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 6%;
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    border-bottom: 1px solid #1f2937;
+}
+
+nav .logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+nav .links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #58a6ff;
+}
+
+/* LIGHT/DARK TOGGLE */
+#toggle {
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: #161b22;
+    border: 1px solid #333;
+    color: #e6edf3;
+    transition: 0.2s;
+}
+
+body.light #toggle {
+    background: #ddd;
+    color: #111;
+    border: 1px solid #aaa;
+}
+
+/* FLOATING SHAPE */
+#floating-shape {
+    position: fixed;
+    top: 25%;
+    right: 5%;
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #00aaff, #0066ff);
+    border-radius: 20px;
+    filter: drop-shadow(0 0 20px #0088ff);
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+    z-index: 1000;
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 180px 10% 120px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3.4rem;
+    margin-bottom: 20px;
+    color: #58a6ff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    line-height: 1.7rem;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #0066ff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.2s;
+}
+
+.hero .btn:hover {
+    background: #004ecc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    #floating-shape {
+        display: none;
     }
 
-    .company-logo {
-        height: 60px;
-        width: auto;
-        margin-bottom: 10px;
+    .hero h1 {
+        font-size: 2.6rem;
     }
 
-    /* CONTACT */
-    .contact-box {
-        background: #161b22;
-        padding: 40px;
-        border-radius: 12px;
-        border: 1px solid #1f2937;
-        max-width: 600px;
-    }
-
-    .contact-box a {
-        color: #58a6ff;
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-
-    .contact-box a:hover {
-        text-decoration: underline;
-    }
-
-    /* RESUME BUTTON */
-    .resume-btn {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 20px;
-        background: #0066ff;
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: 0.2s;
-    }
-    .resume-btn:hover {
-        background: #004ecc;
-    }
-
-    /* FOOTER */
-    footer {
-        text-align: center;
-        padding: 40px;
-        color: #8b949e;
-        font-size: 0.9rem;
-    }
-
-    /* ---------------------- */
-    /* RESPONSIVE DESIGN HERE */
-    /* ---------------------- */
-
-    @media (max-width: 900px) {
-        nav {
-            padding: 15px 5%;
-        }
-        .timeline {
-            margin-left: 60px;
-        }
-        .internship-date {
-            left: -120px;
-        }
-    }
-
-    @media (max-width: 700px) {
-        #floating-shape {
-            display: none;
-        }
-        nav {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        nav .links {
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        section {
-            padding: 100px 7%;
-        }
-        h1 {
-            font-size: 2.6rem;
-        }
-        h2 {
-            font-size: 1.7rem;
-        }
-        .timeline {
-            border-left: none;
-            margin-left: 0;
-            padding-left: 0;
-        }
-        .timeline-item {
-            padding-left: 0;
-        }
-        .timeline-item::before {
-            display: none;
-            /* TIMELINE DOT HOVER EFFECT */
-            .timeline-item:hover::before {
-            transform: scale(1.4);
-            box-shadow: 0 0 12px #58a6ff, 0 0 20px #58a6ff;
-            }
-        }
-        .internship-date {
-            position: relative;
-            left: 0;
-            text-align: left;
-            margin-bottom: 5px;
-        }
-    }
-
-    @media (max-width: 450px) {
-        nav .logo {
-            font-size: 1.1rem;
-        }
-        nav .links {
-            gap: 10px;
-        }
-        h1 {
-            font-size: 2.2rem;
-        }
-        p {
-            font-size: 1rem;
-        }
-    }
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-    <div class="logo">Tabitha Gottipati Portfolio</div>
-
-    <div class="links">
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#projects">Projects</a>
-        <a href="#internships">Internships</a>
-        <a href="#ta">TA Experience</a>
-        <a href="#contact">Contact</a>
-        <button id="toggle">Light/Dark</button>
-    </div>
-</nav>
-
-<!-- FLOATING SHAPE -->
-<div id="floating-shape"></div>
-
-<!-- HERO -->
-<section id="home">
-    <h1>Engineering Portfolio</h1>
-    <p>Welcome to my engineering portfolio — a curated collection of my research, technical achievements, projects, internships, and teaching experience.</p>
-    <a class="resume-btn" href="Tabitha Gottipati_Resume_Fall 2025.pdf" target="_blank">Download Resume</a>
-</section>
-
-<!-- RESEARCH -->
-<section id="research">
-    <h2>Research</h2>
-    <div class="card">
-        <p>Describe your engineering research here.</p>
-    </div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section id="achievements">
-    <h2>Achievements</h2>
-    <div class="card"><h3>SAME Engineering Scholarship</h3></div>
-    <div class="card"><h3>Dream Team Engineering Designathon 2025</h3></div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="gallery">
-        <div class="project"><h3>Project 1</h3><p>Description of the project.</p></div>
-        <div class="project"><h3>Project 2</h3><p>Description of the project.</p></div>
-        <div class="project"><h3>Project 3</h3><p>Description of the project.</p></div>
-    </div>
-</section>
-
-<!-- INTERNSHIPS -->
-<section id="internships">
-    <h2>Internships</h2>
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <div class="internship-date">Summer 2022</div>
-            <img src="stellar.png" class="company-logo">
-            <p>Role, responsibilities, impact.</p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="internship-date">Summer 2023</div>
-            <img src="arco.png" class="company-logo">
-            <p>Role, responsibilities, impact.</p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="internship-date">Summer 2024</div>
-            <img src="medtronic.png" class="company-logo">
-            <ul>
-                <li>Drafted biocompatibility memo for 9 wristed instruments to determine patient-contact area</li>
-                <li>Tested M-IRR instrument subsystems using methods such as Instron</li>
-                <li>Drafted report summarizing testing, data analysis, and conclusions of M-IRR verification</li>
-                <li>Drafted report verifying updated requirements and design products for 8 instruments</li>
-            </ul>
-        </div>
-
-        <div class="timeline-item">
-            <div class="internship-date">Summer 2025</div>
-            <img src="bah.png" class="company-logo">
-            <p>Role, responsibilities, impact.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- TA EXPERIENCE -->
-<section id="ta">
-    <h2>Teaching Assistant Experience</h2>
-    <div class="card"><h3>Computer Programming for Engineers (MATLAB)</h3><p>Role, responsibilities, impact.</p></div>
-    <div class="card"><h3>Numerical Methods</h3><p>Role, responsibilities, impact.</p></div>
-    <div class="card"><h3>Design and Manufacturing Lab</h3><p>Role, responsibilities, impact.</p></div>
-    <div class="card"><h3>Mechanical Engineering Design 3 (Senior Capstone Class)</h3><p>Role, responsibilities, impact.</p></div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-box">
-        <p>Email: <a href="mailto:tgottipati@ufl.edu">tgottipati@ufl.edu</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/tabithagottipati/">linkedin.com/in/tabithagottipati</a></p>
-        <p>GitHub: <a href="#">github.com/yourgithub</a></p>
-    </div>
-</section>
-
-<footer>
-    © 2026 Tabi Engineering — All Rights Reserved
-</footer>
-
-<script>
-    /* ROTATE SHAPE ONLY WHEN SCROLLING */
-    const shape = document.getElementById("floating-shape");
-
-    window.addEventListener("scroll", () => {
-        const y = window.scrollY;
-        shape.style.transform = `rotateX(${y * 0.25}deg) rotateY(${y * 0.35}deg)`;
-    });
-
-    /* LIGHT/DARK MODE */
-    document.getElementById("toggle").onclick = () => {
-        document.body.classList.toggle("light");
-    };
-</script>
-
-</body>
-</html>
+    .hero p {
+        font-size: 1.05rem;
