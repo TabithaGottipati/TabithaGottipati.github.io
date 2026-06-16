@@ -153,3 +153,52 @@ body.light #toggle {
 
     .hero p {
         font-size: 1.05rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">Tabitha Gottipati</div>
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="goals.html">Goals</a>
+        <button id="toggle">Light/Dark</button>
+    </div>
+</nav>
+
+<!-- FLOATING SHAPE -->
+<div id="floating-shape"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Welcome, I'm Tabitha.</h1>
+    <p>
+        Mechanical engineering student passionate about research, innovation, and solving real‑world problems. 
+        Explore my engineering portfolio, learn about my hobbies, or read about my long‑term goals.
+    </p>
+
+    <a class="btn" href="portfolio.html">View Engineering Portfolio</a>
+</section>
+
+<script>
+/* ROTATE SHAPE ON SCROLL */
+const shape = document.getElementById("floating-shape");
+window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    shape.style.transform = `rotateX(${y * 0.25}deg) rotateY(${y * 0.35}deg)`;
+});
+
+/* LIGHT/DARK MODE */
+document.getElementById("toggle").onclick = () => {
+    document.body.classList.toggle("light");
+};
+</script>
+
+</body>
+</html>
