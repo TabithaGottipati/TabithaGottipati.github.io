@@ -3,12 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <div class="logo">
-  <a href="index.html">Tabitha Gottipati Portfolio</a>
-</div>
+  <title>Tabitha Gottipati Portfolio</title>
 
-
-  <!-- Link to your shared stylesheet -->
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -28,10 +24,11 @@
       border-bottom: 1px solid #1f2937;
     }
 
-    nav .logo {
-      font-size: 1.3rem;
+    .logo a {
+      color: inherit;
+      text-decoration: none;
       font-weight: 700;
-      margin-bottom: 10px;
+      font-size: 1.3rem;
     }
 
     nav .links {
@@ -174,7 +171,6 @@
       top: 5px;
     }
 
-    /* TIMELINE DOT HOVER EFFECT */
     .timeline-item:hover::before {
       transform: scale(1.4);
       box-shadow: 0 0 12px #58a6ff, 0 0 20px #58a6ff;
@@ -239,215 +235,138 @@
       font-size: 0.9rem;
     }
 
-    /* ---------------------- */
-    /* RESPONSIVE DESIGN HERE */
-    /* ---------------------- */
-
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav {
-        padding: 15px 5%;
-      }
-
-      .timeline {
-        margin-left: 60px;
-      }
-
-      .internship-date {
-        left: -120px;
-      }
+      .timeline { margin-left: 60px; }
+      .internship-date { left: -120px; }
     }
 
     @media (max-width: 700px) {
-      #floating-shape {
-        display: none;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav .links {
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      section {
-        padding: 100px 7%;
-      }
-
-      h1 {
-        font-size: 2.6rem;
-      }
-
-      h2 {
-        font-size: 1.7rem;
-      }
-
-      .timeline {
-        border-left: none;
-        margin-left: 0;
-        padding-left: 0;
-      }
-
-      .timeline-item {
-        padding-left: 0;
-      }
-
-      .timeline-item::before {
-        display: none;
-      }
-
-      .internship-date {
-        position: relative;
-        left: 0;
-        text-align: left;
-        margin-bottom: 5px;
-      }
-    }
-
-    @media (max-width: 450px) {
-      nav .logo {
-        font-size: 1.1rem;
-      }
-
-      nav .links {
-        gap: 10px;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
+      #floating-shape { display: none; }
+      nav { flex-direction: column; align-items: flex-start; }
+      .timeline { border-left: none; margin-left: 0; padding-left: 0; }
+      .timeline-item { padding-left: 0; }
+      .timeline-item::before { display: none; }
+      .internship-date { position: relative; left: 0; text-align: left; }
     }
   </style>
 </head>
+
 <body>
-  <!-- NAV -->
-  <nav>
-    <div class="logo">Tabitha Gottipati Portfolio</div>
-    <div class="links">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="hobbies.html">Hobbies</a>
-      <a href="goals.html">Goals</a>
-      <!-- These stay because they scroll INSIDE the portfolio page -->
-      <a href="#research">Research</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#projects">Projects</a>
-      <a href="#internships">Internships</a>
-      <a href="#ta">TA Experience</a>
-      <button id="toggle">Light/Dark</button>
+
+<nav>
+  <div class="logo">
+    <a href="index.html">Tabitha Gottipati Portfolio</a>
+  </div>
+
+  <div class="links">
+    <a href="#research">Research</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#projects">Projects</a>
+    <a href="#internships">Internships</a>
+    <a href="#ta">TA Experience</a>
+    <button id="toggle">Light/Dark</button>
+  </div>
+</nav>
+
+<div id="floating-shape"></div>
+
+<section id="home">
+  <h1>Engineering Portfolio</h1>
+  <p>Welcome to my engineering portfolio — a curated collection of my research, technical achievements, projects, internships, and teaching experience.</p>
+  <a class="resume-btn" href="Tabitha Gottipati_Resume_Fall 2025.pdf" target="_blank">Download Resume</a>
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+  <div class="card">
+    <p>Describe your engineering research here.</p>
+  </div>
+</section>
+
+<section id="achievements">
+  <h2>Achievements</h2>
+  <div class="card"><h3>SAME Engineering Scholarship</h3></div>
+  <div class="card"><h3>Dream Team Engineering Designathon 2025</h3></div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="gallery">
+    <div class="project"><h3>Project 1</h3><p>Description of the project.</p></div>
+    <div class="project"><h3>Project 2</h3><p>Description of the project.</p></div>
+    <div class="project"><h3>Project 3</h3><p>Description of the project.</p></div>
+  </div>
+</section>
+
+<section id="internships">
+  <h2>Internships</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="internship-date">Summer 2022</div>
+      <img src="stellar.png" class="company-logo">
+      <p>Role, responsibilities, impact.</p>
     </div>
-  </nav>
 
-  <!-- FLOATING SHAPE -->
-  <div id="floating-shape"></div>
-
-  <!-- HERO -->
-  <section id="home">
-    <h1>Engineering Portfolio</h1>
-    <p>Welcome to my engineering portfolio — a curated collection of my research, technical achievements, projects, internships, and teaching experience.</p>
-    <a class="resume-btn" href="Tabitha Gottipati_Resume_Fall 2025.pdf" target="_blank">Download Resume</a>
-  </section>
-
-  <!-- RESEARCH -->
-  <section id="research">
-    <h2>Research</h2>
-    <div class="card">
-      <p>Describe your engineering research here.</p>
+    <div class="timeline-item">
+      <div class="internship-date">Summer 2023</div>
+      <img src="arco.png" class="company-logo">
+      <p>Role, responsibilities, impact.</p>
     </div>
-  </section>
 
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <div class="card"><h3>SAME Engineering Scholarship</h3></div>
-    <div class="card"><h3>Dream Team Engineering Designathon 2025</h3></div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="gallery">
-      <div class="project"><h3>Project 1</h3><p>Description of the project.</p></div>
-      <div class="project"><h3>Project 2</h3><p>Description of the project.</p></div>
-      <div class="project"><h3>Project 3</h3><p>Description of the project.</p></div>
+    <div class="timeline-item">
+      <div class="internship-date">Summer 2024</div>
+      <img src="medtronic.png" class="company-logo">
+      <ul>
+        <li>Drafted biocompatibility memo for 9 wristed instruments</li>
+        <li>Tested M-IRR instrument subsystems using Instron</li>
+        <li>Drafted verification testing report</li>
+        <li>Verified updated requirements for 8 instruments</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- INTERNSHIPS -->
-  <section id="internships">
-    <h2>Internships</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="internship-date">Summer 2022</div>
-        <img src="stellar.png" class="company-logo" alt="Stellar logo">
-        <p>Role, responsibilities, impact.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="internship-date">Summer 2023</div>
-        <img src="arco.png" class="company-logo" alt="ARCO logo">
-        <p>Role, responsibilities, impact.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="internship-date">Summer 2024</div>
-        <img src="medtronic.png" class="company-logo" alt="Medtronic logo">
-        <ul>
-          <li>Drafted biocompatibility memo for 9 wristed instruments to determine patient-contact area</li>
-          <li>Tested M-IRR instrument subsystems using methods such as Instron</li>
-          <li>Drafted report summarizing testing, data analysis, and conclusions of M-IRR verification</li>
-          <li>Drafted report verifying updated requirements and design products for 8 instruments</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="internship-date">Summer 2025</div>
-        <img src="bah.png" class="company-logo" alt="BAH logo">
-        <p>Role, responsibilities, impact.</p>
-      </div>
+    <div class="timeline-item">
+      <div class="internship-date">Summer 2025</div>
+      <img src="bah.png" class="company-logo">
+      <p>Role, responsibilities, impact.</p>
     </div>
-  </section>
 
-  <!-- TA EXPERIENCE -->
-  <section id="ta">
-    <h2>Teaching Assistant Experience</h2>
-    <div class="card"><h3>Computer Programming for Engineers (MATLAB)</h3><p>Role, responsibilities, impact.</p></div>
-    <div class="card"><h3>Numerical Methods</h3><p>Role, responsibilities, impact.</p></div>
-    <div class="card"><h3>Design and Manufacturing Lab</h3><p>Role, responsibilities, impact.</p></div>
-    <div class="card"><h3>Mechanical Engineering Design 3 (Senior Capstone Class)</h3><p>Role, responsibilities, impact.</p></div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <p>Email: <a href="mailto:tgottipati@ufl.edu">tgottipati@ufl.edu</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/tabithagottipati/">linkedin.com/in/tabithagottipati</a></p>
-      <p>GitHub: <a href="#">github.com/yourgithub</a></p>
-    </div>
-  </section>
+<section id="ta">
+  <h2>Teaching Assistant Experience</h2>
+  <div class="card"><h3>Computer Programming for Engineers (MATLAB)</h3><p>Role, responsibilities, impact.</p></div>
+  <div class="card"><h3>Numerical Methods</h3><p>Role, responsibilities, impact.</p></div>
+  <div class="card"><h3>Design and Manufacturing Lab</h3><p>Role, responsibilities, impact.</p></div>
+  <div class="card"><h3>Mechanical Engineering Design 3</h3><p>Role, responsibilities, impact.</p></div>
+</section>
 
-  <footer>
-    © 2026 Tabi Engineering — All Rights Reserved
-  </footer>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <p>Email: <a href="mailto:tgottipati@ufl.edu">tgottipati@ufl.edu</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/tabithagottipati/">linkedin.com/in/tabithagottipati</a></p>
+    <p>GitHub: <a href="#">github.com/yourgithub</a></p>
+  </div>
+</section>
 
-  <script>
-    /* ROTATE SHAPE ONLY WHEN SCROLLING */
-    const shape = document.getElementById("floating-shape");
-    window.addEventListener("scroll", () => {
-      const y = window.scrollY;
-      shape.style.transform = `rotateX(${y * 0.25}deg) rotateY(${y * 0.35}deg)`;
-    });
+<footer>
+  © 2026 Tabi Engineering — All Rights Reserved
+</footer>
 
-    /* LIGHT/DARK MODE */
-    document.getElementById("toggle").onclick = () => {
-      document.body.classList.toggle("light");
-    };
-  </script>
+<script>
+  const shape = document.getElementById("floating-shape");
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    shape.style.transform = `rotateX(${y * 0.25}deg) rotateY(${y * 0.35}deg)`;
+  });
+
+  document.getElementById("toggle").onclick = () => {
+    document.body.classList.toggle("light");
+  };
+</script>
+
 </body>
 </html>
