@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hobbies — Tabitha Gottipati</title>
 
-<!-- Link to your shared stylesheet -->
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-  <div class="logo">Tabitha Gottipati</div>
+  <div class="logo">
+    <a href="index.html">Tabitha Gottipati</a>
+  </div>
   <div class="links">
     <a href="index.html">Home</a>
     <a href="portfolio.html">Portfolio</a>
@@ -28,43 +28,62 @@
 <!-- FLOATING SHAPE -->
 <div id="floating-shape"></div>
 
-<!-- MAIN CONTENT -->
+<!-- HERO -->
 <section class="hero">
-    <h1>My Hobbies</h1>
-    <p>
-        Outside of engineering, I love exploring creative outlets, staying active, and learning new things.
-        Here are a few of the hobbies that bring me joy and balance.
-    </p>
+  <h1>My Hobbies</h1>
+  <p>
+    Outside of engineering, I love exploring creative outlets, staying active, and learning new things.
+    Each section below highlights one of my main hobbies — with space for detailed activity cards.
+  </p>
 </section>
 
-<!-- HOBBY CARDS -->
-<section style="padding: 40px 10% 120px;">
-    <div class="gallery">
+<!-- 🎨 ART & DESIGN -->
+<section id="art-design">
+  <h2>🎨 Art & Design</h2>
+  <p>I enjoy sketching, digital art, and experimenting with color and composition.</p>
 
-        <div class="project">
-            <h3>🎨 Art & Design</h3>
-            <p>I enjoy sketching, digital art, and experimenting with color and composition.</p>
-        </div>
-
-        <div class="project">
-            <h3>🏋️ Fitness</h3>
-            <p>Strength training, running, and staying active help me stay grounded and energized.</p>
-        </div>
-
-        <div class="project">
-            <h3>🎵 Music</h3>
-            <p>I love discovering new artists, curating playlists, and going to concerts.</p>
-        </div>
-
-        <div class="project">
-            <h3>✈️ Travel</h3>
-            <p>Exploring new places, cultures, and foods is one of my favorite ways to learn.</p>
-        </div>
-
+  <div class="gallery">
+    <!-- Add your Art & Design cards here -->
+    <!-- Example:
+    <div class="project">
+      <h3>Digital Illustration</h3>
+      <p>Description...</p>
     </div>
+    -->
+  </div>
 </section>
 
-<!-- JS FOR LIGHT MODE + FLOATING SHAPE -->
+<!-- 🏋️ FITNESS -->
+<section id="fitness">
+  <h2>🏋️ Fitness</h2>
+  <p>Strength training, running, and staying active help me stay grounded and energized.</p>
+
+  <div class="gallery">
+    <!-- Add your Fitness cards here -->
+  </div>
+</section>
+
+<!-- 🎵 MUSIC -->
+<section id="music">
+  <h2>🎵 Music</h2>
+  <p>I love discovering new artists, curating playlists, and going to concerts.</p>
+
+  <div class="gallery">
+    <!-- Add your Music cards here -->
+  </div>
+</section>
+
+<!-- ✈️ TRAVEL -->
+<section id="travel">
+  <h2>✈️ Travel</h2>
+  <p>Exploring new places, cultures, and foods is one of my favorite ways to learn.</p>
+
+  <div class="gallery">
+    <!-- Add your Travel cards here -->
+  </div>
+</section>
+
+<!-- JS -->
 <script>
 document.getElementById("toggle").onclick = () => {
     document.body.classList.toggle("light");
