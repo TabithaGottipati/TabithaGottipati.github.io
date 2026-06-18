@@ -172,3 +172,37 @@ body.light .project {
         font-size: 1.05rem;
     }
 }
+/* HOBBY SECTIONS */
+section[id] {
+  padding: 100px 10%;
+  border-bottom: 1px solid #1f2937;
+}
+
+section[id] h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #58a6ff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+section[id] p {
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+/* Add subtle background alternation for visual separation */
+#art-design { background: rgba(13, 17, 23, 0.6); }
+#fitness { background: rgba(13, 17, 23, 0.8); }
+#music { background: rgba(13, 17, 23, 0.6); }
+#travel { background: rgba(13, 17, 23, 0.8); }
+
+/* Optional: spacing between cards later */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
